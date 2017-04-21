@@ -1,5 +1,4 @@
-# libdsp
-dsPIC33 DSP library source
+# dsPIC33 DSP library source
 
 *  Software License Agreement
 
@@ -22,3 +21,8 @@ supplier, and is protected under applicable copyright laws. All
    INCIDENTAL OR CONSEQUENTIAL DAMAGES, FOR ANY REASON WHATSOEVER.
                                                                     
    (c) Copyright 2007 Microchip Technology, All rights reserved.    
+
+---
+Apr 22, 2017
+* pid.s: http://www.microchip.com/forums/FindPost/776110
+* cplxFft32b2.s, realFft32b2.s: ymemory issues, swap (W8,W9) with (W10,W11)
