@@ -105,7 +105,9 @@ _PID:
 
 .ifdef __dsPIC33E
 		push	DSRPAG
+                push    DSWPAG          ;timijk: bug fix http://www.microchip.com/forums/FindPost/776110
 		movpag #0x0001, DSRPAG
+		movpag #0x0001, DSWPAG
 .endif
 
         ; Save working registers.
@@ -151,7 +153,8 @@ _PID:
         pop     w8
 
 .ifdef __dsPIC33E
-		pop	DSRPAG
+        pop     DSWPAG
+	pop	DSRPAG
 .endif
         return
 
