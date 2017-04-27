@@ -1,18 +1,18 @@
 /**********************************************************************
-* © 2006 Microchip Technology Inc.
+* ï¿½ 2006 Microchip Technology Inc.
 *
 * FileName:        bitRev.s
 * Dependencies:    Header (.h/.inc) files if applicable, see below
 * Processor:       dsPIC33Fxxxx/PIC24Hxxxx
-* Compiler:        MPLAB® C30 v2.01.00 or higher
+* Compiler:        MPLABï¿½ C30 v2.01.00 or higher
 *
 * SOFTWARE LICENSE AGREEMENT:
-* Microchip Technology Inc. (“Microchip”) licenses this software to you
-* solely for use with Microchip dsPIC® digital signal controller
+* Microchip Technology Inc. (ï¿½Microchipï¿½) licenses this software to you
+* solely for use with Microchip dsPICï¿½ digital signal controller
 * products. The software is owned by Microchip and is protected under
 * applicable copyright laws.  All rights reserved.
 *
-* SOFTWARE IS PROVIDED “AS IS.”  MICROCHIP EXPRESSLY DISCLAIMS ANY
+* SOFTWARE IS PROVIDED ï¿½AS IS.ï¿½  MICROCHIP EXPRESSLY DISCLAIMS ANY
 * WARRANTY OF ANY KIND, WHETHER EXPRESS OR IMPLIED, INCLUDING BUT NOT
 * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A
 * PARTICULAR PURPOSE, OR NON-INFRINGEMENT. IN NO EVENT SHALL MICROCHIP
@@ -75,9 +75,10 @@ _BitReverseReal32bIP:
 
 
 			DO 		w0,BREV_END
-            CP		w7,w1					; w1-w7 ?
-			BRA		le,BREV_SKIP			; w1 <= w7 => skip to next
+            CP		w7,w1					; w7 - w1 ?
+			BRA		le,BREV_SKIP			; w7 <= w1: skip to next
 
+			; --- w7 > w1 ---
 											; Swap 32-bit Complex pairs   
             MOV   	[w1+0],w2    			
 			MOV		[w1+2],w3
